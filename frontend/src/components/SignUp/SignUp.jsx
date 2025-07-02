@@ -3,7 +3,7 @@ import { FaCheckCircle, FaEye, FaEyeSlash, FaArrowLeft } from 'react-icons/fa';
 import { useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
 
-const url = `http://localhost:8000`;
+const url = `https://the-food-app-backend.onrender.com`;
 
 // Custom Toast Component
 const AwesomeToast = ({ message, icon }) => (

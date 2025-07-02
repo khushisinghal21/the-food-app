@@ -8,9 +8,9 @@ import axios from 'axios';
 const buildImageUrl = (img) => {
   if (!img) return 'https://via.placeholder.com/100';
   if (img.startsWith('http')) return img;
-  if (img.startsWith('/uploads/')) return `http://localhost:8000${img}`;
-  if (img.startsWith('uploads/')) return `http://localhost:8000/${img}`;
-  return `http://localhost:8000/uploads/${img}`;
+  if (img.startsWith('/uploads/')) return `https://the-food-app-backend.onrender.com${img}`;
+  if (img.startsWith('uploads/')) return `https://the-food-app-backend.onrender.com/${img}`;
+  return `https://the-food-app-backend.onrender.com/uploads/${img}`;
 };
 
 const List = () => {
@@ -20,7 +20,7 @@ const List = () => {
   useEffect(() => {
     const fetchItem = async () => {
       try {
-        const { data } = await axios.get('http://localhost:8000/api/items');
+        const { data } = await axios.get('https://the-food-app-backend.onrender.com/api/items');
         // Support both {success, data: [...]} and legacy [...]
         if (data && Array.isArray(data.data)) {
           setItems(data.data);
@@ -43,7 +43,7 @@ const List = () => {
     if (!confirmDelete) return;
   
     try {
-      await axios.delete(`http://localhost:8000/api/items/${itemId}`);
+      await axios.delete(`https://the-food-app-backend.onrender.com/api/items/${itemId}`);
       setItems((prev) => prev.filter((item) => item._id !== itemId));
       console.log('Deleted item ID:', itemId);
     } catch (error) {

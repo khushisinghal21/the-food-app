@@ -15,7 +15,7 @@ const OurMenu = () => {
     useEffect(()=>{
         const fetchMenu = async () => {
             try {
-                const res = await axios.get('http://localhost:8000/api/items');
+                const res = await axios.get('https://the-food-app-backend.onrender.com/api/items');
                 const byCategory = res.data.reduce((acc, item) => {
                     const cat = item.category || 'uncategorised';
                     acc[cat] = acc[cat] || [];
@@ -111,7 +111,7 @@ const OurMenu = () => {
         item.image
             ? item.image.startsWith('http')
                 ? item.image
-                : `http://localhost:8000${item.image}`
+                : `https://the-food-app-backend.onrender.com${item.image}`
             : '/placeholder.jpg'
     }
                                         alt={item.name}

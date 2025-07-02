@@ -70,7 +70,7 @@ export const CardProvider = ({ children }) => {
     if (!token) return; // Don't fetch if not authenticated
     
     axios
-      .get('http://localhost:8000/api/cart', {
+      .get('https://the-food-app-backend.onrender.com/api/cart', {
         withCredentials: true,
         headers: { Authorization: `Bearer ${token}` },
       })
@@ -112,7 +112,7 @@ export const CardProvider = ({ children }) => {
 
     try {
       const res = await axios.post(
-        'http://localhost:8000/api/cart',
+        'https://the-food-app-backend.onrender.com/api/cart',
         {
           itemId: itemId,
           quantity: qty,
@@ -143,7 +143,7 @@ export const CardProvider = ({ children }) => {
     }
 
     try {
-      const res = await axios.delete(`http://localhost:8000/api/cart/${cartItemId}`, {
+      const res = await axios.delete(`https://the-food-app-backend.onrender.com/api/cart/${cartItemId}`, {
         withCredentials: true,
         headers: {
           Authorization: `Bearer ${token}`,
@@ -174,7 +174,7 @@ export const CardProvider = ({ children }) => {
 
     try {
       const res = await axios.put(
-        `http://localhost:8000/api/cart/${cartItemId}`,
+        `https://the-food-app-backend.onrender.com/api/cart/${cartItemId}`,
         { quantity: qty },
         {
           withCredentials: true,
@@ -202,7 +202,7 @@ export const CardProvider = ({ children }) => {
 
     try {
       const res = await axios.delete(
-        'http://localhost:8000/api/cart/clear',
+        'https://the-food-app-backend.onrender.com/api/cart/clear',
         {
           withCredentials: true,
           headers: {

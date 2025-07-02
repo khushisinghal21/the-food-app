@@ -14,7 +14,7 @@ const OurHomeMenu = () => {
     const { cartItems, addToCart, removeFromCart, updateQuantity } = useCart();
 
     useEffect(() => {
-        axios.get('http://localhost:8000/api/items')
+        axios.get('https://the-food-app-backend.onrender.com/api/items')
             .then(res => {
                 const grouped = res.data.reduce((acc, item) => {
                     acc[item.category] = acc[item.category] || [];
@@ -112,7 +112,7 @@ const handleDecrement = (item) => {
         item.image
             ? item.image.startsWith('http')
                 ? item.image
-                : `http://localhost:8000${item.image}`
+                : `https://the-food-app-backend.onrender.com${item.image}`
             : '/placeholder.jpg'
     }
                                         alt={item.name}

@@ -4,7 +4,7 @@ import { iconClass, inputBase } from '../../assets/dummydata';
 import { Link } from 'react-router-dom';
 import { FaUserPlus } from 'react-icons/fa';
 import axios from 'axios'
-const url = `http://localhost:8000`; 
+const url = `https://the-food-app-backend.onrender.com`; 
 const Login = ({ onLoginSuccess, onClose }) => {
   const [showPassword, setShowPassword] = useState(false);
   const [showToast, setShowToast] = useState({visible: false,message:'',isError:false});

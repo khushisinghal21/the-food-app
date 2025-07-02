@@ -15,7 +15,7 @@ const SpecialOffer = () => {
   };
   const [items,setItems]=useState([])
   useEffect(()=>{
-    axios.get('http://localhost:8000/api/items')
+    axios.get('https://the-food-app-backend.onrender.com/api/items')
     .then(res=>setItems(res.data.items ?? res.data))
     .catch(err=>console.error(err))
 
@@ -58,7 +58,7 @@ const SpecialOffer = () => {
     item.image
       ? item.image.startsWith('http')
         ? item.image
-        : `http://localhost:8000${item.image}`
+        : `https://the-food-app-backend.onrender.com${item.image}`
       : '/placeholder.jpg'
   }
                     alt={item.name}

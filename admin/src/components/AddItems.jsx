@@ -167,7 +167,7 @@ const AddItems = () => {
         }
       });
 
-      const res = await axios.post('http://localhost:8000/api/items',
+      const res = await axios.post('https://the-food-app-backend.onrender.com/api/items',
   payload,
   {
     headers: { 'Content-Type': 'multipart/form-data' },

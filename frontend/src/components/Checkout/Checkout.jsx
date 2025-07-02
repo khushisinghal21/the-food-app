@@ -8,9 +8,9 @@ import axios from 'axios';
 const buildImageUrl = (path) => {
   if (!path) return "https://via.placeholder.com/100";
   if (path.startsWith("http")) return path;
-  if (path.startsWith("/uploads/")) return `http://localhost:8000${path}`;
-  if (path.startsWith("uploads/")) return `http://localhost:8000/${path}`;
-  return `http://localhost:8000/uploads/${path}`;
+  if (path.startsWith("/uploads/")) return `https://the-food-app-backend.onrender.com${path}`;
+  if (path.startsWith("uploads/")) return `https://the-food-app-backend.onrender.com/${path}`;
+  return `https://the-food-app-backend.onrender.com/uploads/${path}`;
 };
 
 
@@ -80,7 +80,7 @@ const authHeaders = token ? { Authorization: `Bearer ${token}` } : {};
       console.log('Selected payment method:', formData.paymentMethod);
       if (formData.paymentMethod === 'paypal' || formData.paymentMethod === 'online') {
         // Online payment
-        const { data } = await axios.post('http://localhost:8000/api/orders', payload, { headers: authHeaders });
+        const { data } = await axios.post('https://the-food-app-backend.onrender.com/api/orders', payload, { headers: authHeaders });
         console.log('Order placed (online):', data);
         if (data.checkoutUrl) {
           window.location.href = data.checkoutUrl;
@@ -89,7 +89,7 @@ const authHeaders = token ? { Authorization: `Bearer ${token}` } : {};
         }
       } else {
         // COD
-        const { data } = await axios.post('http://localhost:8000/api/orders', payload, { headers: authHeaders });
+        const { data } = await axios.post('https://the-food-app-backend.onrender.com/api/orders', payload, { headers: authHeaders });
         clearCart();
         navigate('/myorder', { state: { order: data.order } });
       }
@@ -111,7 +111,7 @@ const authHeaders = token ? { Authorization: `Bearer ${token}` } : {};
     if(paymentStatus){
         setLoading(true);
         if(paymentStatus==='success' && sessionId){
-            axios.post('http://localhost:8000/api/orders/confirm', {
+            axios.post('https://the-food-app-backend.onrender.com/api/orders/confirm', {
                
                 sessionId
             }, { headers: authHeaders })

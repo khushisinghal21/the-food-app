@@ -20,7 +20,7 @@ const MyOrder = () => {
     const fetchOrders = async () => {
       try {
         const response = await axios.get(
-          'http://localhost:8000/api/orders',
+          'https://the-food-app-backend.onrender.com/api/orders',
           {
             headers: {
               Authorization: `Bearer ${token}`,

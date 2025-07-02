@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { FaPlus, FaMinus } from 'react-icons/fa';
 import { FaTrash } from 'react-icons/fa';
 import { FaTimes } from 'react-icons/fa';
-const API_URL="http://localhost:8000"
+const API_URL="https://the-food-app-backend.onrender.com"
 
 const buildImageUrl = (path) => {
   if (!path) return "";

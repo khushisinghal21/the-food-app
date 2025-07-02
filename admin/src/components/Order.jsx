@@ -13,9 +13,9 @@ import { FiUser } from 'react-icons/fi';
 const buildImageUrl = (img) => {
   if (!img) return 'https://via.placeholder.com/100';
   if (img.startsWith('http')) return img;
-  if (img.startsWith('/uploads/')) return `http://localhost:8000${img}`;
-  if (img.startsWith('uploads/')) return `http://localhost:8000/${img}`;
-  return `http://localhost:8000/uploads/${img}`;
+  if (img.startsWith('/uploads/')) return `https://the-food-app-backend.onrender.com${img}`;
+  if (img.startsWith('uploads/')) return `https://the-food-app-backend.onrender.com/${img}`;
+  return `https://the-food-app-backend.onrender.com/uploads/${img}`;
 };
 
 const Order = () => {
@@ -26,7 +26,7 @@ const Order = () => {
   useEffect(() => {
     const fetchOrders = async () => {
       try {
-        const response = await axios.get('http://localhost:8000/api/orders/getall', {
+        const response = await axios.get('https://the-food-app-backend.onrender.com/api/orders/getall', {
           headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
         });
 
@@ -64,7 +64,7 @@ const Order = () => {
 
   const handleStatusChange = async (orderId, newStatus) => {
     try {
-      await axios.put(`http://localhost:8000/api/orders/getall/${orderId}`, {
+      await axios.put(`https://the-food-app-backend.onrender.com/api/orders/getall/${orderId}`, {
         status: newStatus,
       }, {
         headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },

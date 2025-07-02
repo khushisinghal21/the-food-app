@@ -27,7 +27,7 @@ const VerifyPaymentPage = () => {
 
       try {
         const response = await axios.post(
-          'http://localhost:8000/api/orders/confirm',
+          'https://the-food-app-backend.onrender.com/api/orders/confirm',
           { sessionId },
           { headers: authHeaders }
         );
