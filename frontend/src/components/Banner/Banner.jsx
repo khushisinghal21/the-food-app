@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { FaDownload, FaSearch,FaTimes } from "react-icons/fa";
 import { FaPlay } from "react-icons/fa";
 import{bannerAssets} from '../../assets/dummydata';
-import { set } from 'mongoose';
+
 const Banner = () => {
     const [searchQuery, setSearchQuery]=useState('');
    const{bannerImage,orbitImages ,video} = bannerAssets
