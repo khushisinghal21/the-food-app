@@ -26,7 +26,7 @@ const __dirname = path.dirname(__filename);
 // Middlewares
 
 app.use(cors({
-   origin: ["http://localhost:3000", "http://localhost:3001"], // allow both frontend ports
+   origin: ["https://the-food-app-frontend.onrender.com", "https://the-food-app-admin.onrender.com"], // allow both frontend ports
    credentials: true
 }));
 app.use(cookieParser());
